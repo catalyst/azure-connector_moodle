@@ -1,0 +1,69 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "A Moodle Connector for Azure Logic Apps.",
+    "version": "1.0.0",
+    "title": "Moodle Connector",
+    "contact": {
+      "email": "enquiries@catalyst-au.net"
+    },
+    "license": {
+      "name": "GPL 3.0",
+      "url": "https://www.gnu.org/licenses/gpl-3.0.en.html"
+    }
+  },
+  "host": "university.catalyst-au.net",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/webservice/rest/server.php": {
+      "post": {
+        "summary": "Call Moodle webservices",
+        "description": "Use this conencto to communicate with Moodle via webservice functions.",
+        "operationId": "Webservice",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "wsfunction",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "core_course_get_courses",
+              "mod_forum_add_discussion",
+              "core_user_create_users"
+            ],
+            "description": "The webservice to call"
+          },
+          {
+            "in": "query",
+            "name": "moodlewsrestformat",
+            "required": false,
+            "default": "json",
+            "type": "string",
+            "description": "The format to return the call result in."
+          }
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "in": "query",
+      "name": "wstoken"
+    }
+  }
+}

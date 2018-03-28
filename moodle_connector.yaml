@@ -13,12 +13,40 @@ info:
 
 # Host information.
 host: university.catalyst-au.net # This will need to be changed
-basePath: /webservice/rest
+basePath: /
 schemes:
 - https
 
 # Api information.
 paths:
-  /server.php:
+  /webservice/rest/server.php:
     post:
-      summary: "a webservice"
+      summary: "Call Moodle webservices"
+      description: "Use this conencto to communicate with Moodle via webservice functions."
+      operationId: "Webservice"
+      parameters:
+        - in: query
+          name: wsfunction
+          required: true
+          type: string
+          enum: [core_course_get_courses, mod_forum_add_discussion, core_user_create_users]
+          description: "The webservice to call"
+        - in: query
+          name: moodlewsrestformat
+          required: false
+          default: json
+          type: string
+          description: "The format to return the call result in."
+      consumes:
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+
+securityDefinitions:
+    api_key:
+      type: "apiKey"
+      in: "query"
+      name: "wstoken"
