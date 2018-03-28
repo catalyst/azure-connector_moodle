@@ -29,7 +29,7 @@ paths:
           name: wsfunction
           required: true
           type: string
-          enum: [core_course_get_courses, mod_forum_add_discussion, core_user_create_users]
+          enum: [core_enrol_get_users_courses, mod_forum_add_discussion, core_user_create_users, core_course_get_courses]
           description: "The webservice to call"
         - in: query
           name: moodlewsrestformat

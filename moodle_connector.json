@@ -30,9 +30,10 @@
             "required": true,
             "type": "string",
             "enum": [
-              "core_course_get_courses",
+              "core_enrol_get_users_courses",
               "mod_forum_add_discussion",
-              "core_user_create_users"
+              "core_user_create_users",
+              "core_course_get_courses"
             ],
             "description": "The webservice to call"
           },
