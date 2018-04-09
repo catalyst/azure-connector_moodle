@@ -13,44 +13,65 @@
     }
   },
   "host": "university.catalyst-au.net",
-  "basePath": "/",
+  "basePath": "/webservice/restful/server.php",
   "schemes": [
     "https"
   ],
   "paths": {
-    "/webservice/rest/server.php": {
+    "/core_course_get_courses": {
       "post": {
         "summary": "Call Moodle webservices",
         "description": "Use this conencto to communicate with Moodle via webservice functions.",
-        "operationId": "Webservice",
+        "operationId": "core_course_get_courses",
         "parameters": [
           {
-            "in": "query",
-            "name": "wsfunction",
+            "name": "Content-Type",
+            "in": "header",
             "required": true,
-            "type": "string",
-            "enum": [
-              "core_enrol_get_users_courses",
-              "mod_forum_add_discussion",
-              "core_user_create_users",
-              "core_course_get_courses"
-            ],
-            "description": "The webservice to call"
+            "type": "string"
           },
           {
-            "in": "query",
-            "name": "moodlewsrestformat",
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "The ids of the courses to return",
             "required": false,
-            "default": "json",
-            "type": "string",
-            "description": "The format to return the call result in."
+            "schema": {
+              "type": "object",
+              "properties": {
+                "options": {
+                  "type": "object",
+                  "properties": {
+                    "ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "description": "ids",
+                      "x-ms-summary": "ids"
+                    }
+                  },
+                  "description": "options",
+                  "x-ms-summary": "options"
+                }
+              }
+            }
           }
         ],
         "consumes": [
+          "application/json",
+          "application/xml",
           "application/x-www-form-urlencoded"
         ],
         "produces": [
-          "application/json"
+          "application/json",
+          "application/xml"
         ],
         "responses": {
           "200": {
@@ -63,8 +84,8 @@
   "securityDefinitions": {
     "api_key": {
       "type": "apiKey",
-      "in": "query",
-      "name": "wstoken"
+      "in": "header",
+      "name": "Authorization"
     }
   }
 }
