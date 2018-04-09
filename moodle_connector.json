@@ -20,8 +20,8 @@
   "paths": {
     "/core_course_get_courses": {
       "post": {
-        "summary": "Call Moodle webservices",
-        "description": "Use this conencto to communicate with Moodle via webservice functions.",
+        "summary": "Get Moodle Courses",
+        "description": "Get courses in Moodle instance via webservice functions. Can filter by course ID.",
         "operationId": "core_course_get_courses",
         "parameters": [
           {
@@ -59,6 +59,61 @@
                   },
                   "description": "options",
                   "x-ms-summary": "options"
+                }
+              }
+            }
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/core_enrol_get_users_courses": {
+      "post": {
+        "summary": "Get user courses",
+        "description": "Get the courses a user is enrolled in..",
+        "operationId": "core_enrol_get_users_courses",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "The id of the user to get courses for",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userid": {
+                  "type": "integer",
+                  "format": "int32,",
+                  "description": "userid",
+                  "x-ms-summary": "userid"
                 }
               }
             }
