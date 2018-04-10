@@ -371,6 +371,188 @@
           }
         }
       }
+    },
+    "/core_user_update_users": {
+      "post": {
+        "summary": "Update Moodle users",
+        "description": "Update users in Moodle.",
+        "operationId": "core_user_update_users",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "The user objects to update",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "users": {
+                  "description": "users",
+                  "x-ms-summary": "users",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "description": "id",
+                        "x-ms-summary": "id"
+                      },
+                      "username": {
+                        "type": "string",
+                        "description": "username",
+                        "x-ms-summary": "username"
+                      },
+                      "password": {
+                        "type": "string",
+                        "description": "password",
+                        "x-ms-summary": "password"
+                      },
+                      "firstname": {
+                        "type": "string",
+                        "description": "firstname",
+                        "x-ms-summary": "firstname"
+                      },
+                      "lastname": {
+                        "type": "string",
+                        "description": "lastname",
+                        "x-ms-summary": "lastname"
+                      },
+                      "email": {
+                        "type": "string",
+                        "description": "email",
+                        "x-ms-summary": "email"
+                      },
+                      "auth": {
+                        "type": "string",
+                        "description": "auth",
+                        "x-ms-summary": "auth"
+                      },
+                      "suspended": {
+                        "type": "integer",
+                        "description": "suspended",
+                        "x-ms-summary": "suspended"
+                      },
+                      "idnumber": {
+                        "type": "string",
+                        "description": "idnumber",
+                        "x-ms-summary": "idnumber"
+                      },
+                      "lang": {
+                        "type": "string",
+                        "description": "lang",
+                        "x-ms-summary": "lang"
+                      },
+                      "calendartype": {
+                        "type": "string",
+                        "description": "calendartype",
+                        "x-ms-summary": "calendartype"
+                      },
+                      "theme": {
+                        "type": "string",
+                        "description": "theme",
+                        "x-ms-summary": "theme"
+                      },
+                      "timezone": {
+                        "type": "string",
+                        "description": "timezone",
+                        "x-ms-summary": "timezone"
+                      },
+                      "mailformat": {
+                        "type": "integer",
+                        "description": "mailformat",
+                        "x-ms-summary": "mailformat"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "description",
+                        "x-ms-summary": "description"
+                      },
+                      "city": {
+                        "type": "string",
+                        "description": "city",
+                        "x-ms-summary": "city"
+                      },
+                      "country": {
+                        "type": "string",
+                        "description": "country",
+                        "x-ms-summary": "country"
+                      },
+                      "firstnamephonetic": {
+                        "type": "string",
+                        "description": "firstnamephonetic",
+                        "x-ms-summary": "firstnamephonetic"
+                      },
+                      "lastnamephonetic": {
+                        "type": "string",
+                        "description": "lastnamephonetic",
+                        "x-ms-summary": "lastnamephonetic"
+                      },
+                      "middlename": {
+                        "type": "string",
+                        "description": "middlename",
+                        "x-ms-summary": "middlename"
+                      },
+                      "alternatename": {
+                        "type": "string",
+                        "description": "alternatename",
+                        "x-ms-summary": "alternatename"
+                      },
+                      "customfields": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "type",
+                              "x-ms-summary": "type"
+                            },
+                            "value": {
+                              "type": "string",
+                              "description": "value",
+                              "x-ms-summary": "value"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
     }
   },
   "securityDefinitions": {
