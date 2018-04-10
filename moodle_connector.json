@@ -86,7 +86,7 @@
     "/core_enrol_get_users_courses": {
       "post": {
         "summary": "Get user courses",
-        "description": "Get the courses a user is enrolled in..",
+        "description": "Get the courses a user is enrolled in.",
         "operationId": "core_enrol_get_users_courses",
         "parameters": [
           {
@@ -279,17 +279,74 @@
                             "type": {
                               "type": "string",
                               "description": "type",
-                              "x-ms-sumamry": "type"
+                              "x-ms-summary": "type"
                             },
                             "value": {
                               "type": "string",
                               "description": "value",
-                              "x-ms-sumamry": "value"
+                              "x-ms-summary": "value"
                             }
                           }
                         }
                       }
                     }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/core_user_delete_users": {
+      "post": {
+        "summary": "Delete users",
+        "description": "Delete Moodle user accounts.",
+        "operationId": "core_user_delete_users",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "The ids of the users to delete",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userids": {
+                  "type": "array",
+                  "description": "userids",
+                  "x-ms-summary": "userids",
+                  "items": {
+                    "type": "integer"
                   }
                 }
               }
