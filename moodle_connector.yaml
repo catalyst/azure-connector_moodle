@@ -412,6 +412,98 @@ paths:
           description: "OK"
         400:
           description: "Bad Request"
+  /mod_forum_add_discussion:
+    post:
+      summary: "Add forum discussion topic"
+      description: "Add a new discussion topic to a Moodle forum."
+      operationId: "mod_forum_add_discussion"
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: Accept
+        in: header
+        required: true
+        type: string
+      - name: body
+        in: body
+        description: "The new foruom post object"
+        required: true
+        schema:
+          type: object
+          properties:
+            forumid:
+              type: integer
+              format: int32,
+              description: forumid
+              x-ms-summary: forumid
+            subject:
+              type: string
+              description: subject
+              x-ms-summary: subject
+            message:
+              type: string
+              description: message
+              x-ms-summary: message
+      consumes:
+      - application/json
+      - application/xml
+      - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      - application/xml
+      responses:
+        200:
+          description: "OK"
+        400:
+          description: "Bad Request"
+  /mod_forum_add_discussion_post:
+    post:
+      summary: "Add forum discussion post"
+      description: "Add a new reply to a Moodle forum discussion topic."
+      operationId: "mod_forum_add_discussion_post"
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: Accept
+        in: header
+        required: true
+        type: string
+      - name: body
+        in: body
+        description: "The new foruom post object"
+        required: true
+        schema:
+          type: object
+          properties:
+            postid:
+              type: integer
+              format: int32,
+              description: postid
+              x-ms-summary: postid
+            subject:
+              type: string
+              description: subject
+              x-ms-summary: subject
+            message:
+              type: string
+              description: message
+              x-ms-summary: message
+      consumes:
+      - application/json
+      - application/xml
+      - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      - application/xml
+      responses:
+        200:
+          description: "OK"
+        400:
+          description: "Bad Request"
 
 securityDefinitions:
   api_key:
