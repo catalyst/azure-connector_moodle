@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "A Moodle Connector for Azure Logic Apps.",
-    "version": "1.0.0",
+    "version": "2018052300",
     "title": "Moodle Connector",
     "contact": {
       "email": "enquiries@catalyst-au.net"
