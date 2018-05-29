@@ -5,6 +5,8 @@ An Azure Logic App connector for Moodle.
 This connector allows Microsoft [Logic Apps](https://azure.microsoft.com/en-au/services/logic-apps/) and [Power Apps](https://web.powerapps.com/) to interface with several Moodle webservices.<br/>
 This allows Moodle functionality to be driven by external sources via Logic Apps.
 
+More information on Microsoft Logic Apps and how they can help automate your workflows can be found here: https://azure.microsoft.com/en-au/services/logic-apps/
+
 # Supported Moodle Webservices
 The following Moodle webservices are supported by this connector:
 
