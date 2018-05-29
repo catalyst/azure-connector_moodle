@@ -14,11 +14,33 @@ The following Moodle webservices are supported by this connector:
 * **core_user_delete_users**: Delete Moodle user accounts.
 * **core_user_update_users**: Update users in Moodle.
 * **mod_forum_add_discussion**: Add a new discussion topic to a Moodle forum.
-* **mod_forum_add_discussion_post**: Add a new reply to a Moodle forum discussion topic."
+* **mod_forum_add_discussion_post**: Add a new reply to a Moodle forum discussion topic.
+
+More information on Moodle webservices, their usage and configuration can be found on the [Moodle.org](https://moodle.org) website here: https://docs.moodle.org/35/en/Using_web_services
 
 # Moodle Requirements
 Before this connector can be used with Moodle the following Moodle plugin needs to be installed:
 * https://github.com/catalyst/moodle-webservice_restful
+
+The above Moodle plugin allows Moodle's existing webservices to be communicated with in a RESTful way. This is required as Logic App Connectors require each method of a connected API to be accessed by individual URI endpoints.  This plugin adds this required functionality to Moodle.
+
+This connector and the above Moodle plugin support the following versions of Moodle:
+
+* 3.1
+* 3.2
+* 3.3
+* 3.4
+* 3.5
+
+# Moodle Outbound Functionality
+This connector and the required webservice plugin allow "inbound" connectivity to Moodle. That is they allow Logic Apps to initiate actions in Moodle; such as create users and retrieve data.
+
+Optionally, you can also install the following Moodle plugin to allow Moodle to "trigger" actions in Logic Apps. This allows Moodle to perform "outbound" actions based on events in Moodle.
+
+This Moodle Trigger plugin can be found either from GitHub or the Moodle Plugin Directory using the links below:
+
+* https://github.com/catalyst/moodle-tool_trigger
+* https://moodle.org/plugins/tool_trigger
 
 # Crafted by Catalyst IT
 
