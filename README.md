@@ -38,7 +38,7 @@ This connector and the above Moodle plugin support the following versions of Moo
 
 # Setting up Moodle Webservices
 
-Prior to using this connector
+Prior to using this connector with Moodle at least some of the supported Moodle webservices need to be configured and the Moodle Restful plugin needs to be installed.
 
 # Using this connector in Azure
 
