@@ -2,6 +2,8 @@
 
 An Azure Logic App connector for Moodle.
 
+The connector is provided as an Open API definition file.
+
 This connector allows Microsoft [Logic Apps](https://azure.microsoft.com/en-au/services/logic-apps/) and [Power Apps](https://web.powerapps.com/) to interface with several Moodle webservices.<br/>
 This allows Moodle functionality to be driven by external sources via Logic Apps.
 
@@ -33,6 +35,18 @@ This connector and the above Moodle plugin support the following versions of Moo
 * 3.3
 * 3.4
 * 3.5
+
+# Setting up Moodle Webservices
+
+Prior to using this connector
+
+# Using this connector in Azure
+
+The Microsoft documentation provides step by step documentation, on how to use set up a custom connector in the Azure Portal using a custom Open API definition file.
+
+Follow this documentation to use this connector to communicate with Moodle.
+
+The documentation can be accessed at: https://docs.microsoft.com/en-gb/connectors/custom-connectors/define-openapi-definition
 
 # Moodle Outbound Functionality
 This connector and the required webservice plugin allow "inbound" connectivity to Moodle. That is they allow Logic Apps to initiate actions in Moodle; such as create users and retrieve data.
